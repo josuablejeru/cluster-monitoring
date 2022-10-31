@@ -32,7 +32,7 @@
     },
     {
       name: 'traefikExporter',
-      enabled: false,
+      enabled: true,
       file: import 'modules/traefik.jsonnet',
     },
     {
@@ -42,18 +42,18 @@
     },
     {
       name: 'speedtestExporter',
-      enabled: false,
+      enabled: true,
       file: import 'modules/speedtest_exporter.jsonnet',
     },
   ],
 
   k3s: {
-    enabled: false,
-    master_ip: ['192.168.1.15'],
+    enabled: true,
+    master_ip: ['localhost'],
   },
 
   // Domain suffix for the ingresses
-  suffixDomain: '192.168.1.15.nip.io',
+  suffixDomain: 'monitoring.nip.io',
   // Additional domain suffixes for the ingresses.
   // For example suffixDomain could be an external one and this a local domain.
   additionalDomains: [],
@@ -69,7 +69,7 @@
   enablePersistence: {
     // Setting these to false, defaults to emptyDirs.
     prometheus: false,
-    grafana: false,
+    grafana: true,
     // If using a pre-created PV, fill in the names below. If blank, they will use the default StorageClass
     prometheusPV: '',
     grafanaPV: '',
