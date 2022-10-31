@@ -49,7 +49,7 @@
 
   k3s: {
     enabled: true,
-    master_ip: ['localhost'],
+    master_ip: ['100.124.109.122'],
   },
 
   // Domain suffix for the ingresses
